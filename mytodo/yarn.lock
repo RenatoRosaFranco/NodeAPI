@@ -6017,6 +6017,11 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
+mailgun@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/mailgun/-/mailgun-0.5.0.tgz#bce0f3134a6d788b6f2368f71784ef20277cd697"
+  integrity sha1-vODzE0pteItvI2j3F4TvICd81pc=
+
 make-dir@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-2.1.0.tgz#5f0310e18b8be898cc07009295a30ae41e91e6f5"
