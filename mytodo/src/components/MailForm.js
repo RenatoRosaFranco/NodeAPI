@@ -18,6 +18,7 @@ class MailForm extends Component {
 		this.setState({email: this.refs.email.value})
 		this.setState({message: this.refs.message.value})
 
+		console.log("E-mail informations: ")
 		console.log(this.refs.name.value)
 		console.log(this.refs.phone.value)
 		console.log(this.refs.email.value)
