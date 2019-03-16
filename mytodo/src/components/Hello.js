@@ -12,7 +12,6 @@ class Hello extends Component {
 
 	handleClick = (e) => {
 		e.preventDefault()
-		this.setState({ name: 'Emanuel' })
 		this.setState({ counter: this.state.counter += 1 })
 	}
 
