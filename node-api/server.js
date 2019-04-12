@@ -1,10 +1,13 @@
-const express = require("express");
-const app = express();
+// Iniciando o App
+const express    = require('express');
+const mongoose   = require('mongoose');
+const requireDir = require('require-dir');
+const app        = express();
 
-// req  = request
-// resp = response
-app.get('/', (req, res) => {
-  res.send('Hello Browser');
-});
+// Iniciando o DB
+mongoose.connect('mongodb://localhost:27017/nodeapi', { useNewUrlParser: true });
+requireDir('./src/models');
 
+// Rotas
+app.use('/api', require('./src/routes'));
 app.listen(3001);
