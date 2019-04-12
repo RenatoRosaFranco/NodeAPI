@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
-const Product  = mongoose.model('Product');
+const Product  = mongoose.model('Product'); 
 
 // ProductController
 module.exports = {
 
   // GET /index
   async index(req, res) {
-   const products = await Product.find();
+   const { page = 1 } = req.query
+   const products = await Product.paginate({}, { page: page, limit: 10 });
    return res.json(products);
   },
   
@@ -18,13 +19,13 @@ module.exports = {
 
   // GET /show
   async show(req, res) {
-    const product = Product.findById(req.params.id);
+    const product = await Product.findById(req.params.id);
     return res.json(product);
   },
 
   // PATCH /update
   async update(req, res) {
-    const product = Product.findByIdAndUpdate(req.params.id, req.params.body, { new: true })
+    const product = await Product.findByIdAndUpdate(req.params.id, req.params.body, { new: true })
     return res.json(product);
   },
   
